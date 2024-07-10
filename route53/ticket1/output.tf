@@ -1,11 +1,11 @@
-output "public_dns" {
+output "zone_id" {
   # Your code goes here
 }
 
-output "public_ip" {
+output "name" {
    # Your code goes here
 }
 
-output "instance_id" {
+output "records" {
   # Your code goes here
 }
