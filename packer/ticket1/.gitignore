@@ -1,0 +1,8 @@
+# Packer
+packer_cache/
+crash.log
+crash.*.log
+*.box
+
+# build output you don't want committed
+output-*/

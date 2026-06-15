@@ -1,0 +1,2 @@
+# This file is copied into the AMI by the `file` provisioner.
+# Edit it as the task describes (e.g. a welcome banner).
