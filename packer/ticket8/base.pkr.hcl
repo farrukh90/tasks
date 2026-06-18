@@ -18,7 +18,9 @@ source "amazon-ebs" "ubuntu" {
 build {
   sources = ["source.amazon-ebs.ubuntu"]
   provisioner "shell" {
-    # your code goes here (any small step, e.g. apt-get update)
+    # your code goes here (any small step). If you apt, wait for cloud-init first:
+    #   "sudo cloud-init status --wait",   # don't race first-boot cloud-init (dpkg/apt lock)
+    #   "sudo apt-get update"
   }
   post-processor "manifest" {
     # your code goes here (output = "manifest.json")

@@ -18,6 +18,9 @@ source "amazon-ebs" "ubuntu" {
 build {
   sources = ["source.amazon-ebs.ubuntu"]
   provisioner "shell" {
-    # your code goes here (apt-get update; install: git curl unzip jq)
+    # your code goes here. inline = [ ... ] — wait for cloud-init FIRST, then apt:
+    #   "sudo cloud-init status --wait",   # don't race first-boot cloud-init (dpkg/apt lock)
+    #   "sudo apt-get update",
+    #   "sudo apt-get install -y git curl unzip jq"
   }
 }
